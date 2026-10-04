@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exemplo de Box Model</title>
+
+<style>
+
+    :root {
+  --largura-caixa: 200px;
+  --altura-caixa: 240px;
+  --espacamento-padrao: 16px;
+}
+
+body {
+
+font-family: Arial, sans-serif;
+font-size: 10px;
+
+margin: 20px;
+
+background-color: #f4f4f4;
+
+}
+
+.caixa-padrao {
+
+width: var(--largura-caixa);
+height: var(--altura-caixa);
+background-color: lightblue;
+border: 5px solid darkblue;
+padding: 10px;
+margin: 20px;
+/* box-sizing: content-box; é o padrão */
+box-sizing: content-box; /* Explícito para demonstração */
+}
+.caixa-border-box {
+width: var(--largura-caixa);
+height: var(--altura-caixa);
+background-color: lightgreen;
+border: 5px solid darkgreen;
+padding: 10px;
+margin: 20px;
+box-sizing: border-box; /* Inclui padding e border na largura/altura */
+}
+p {
+margin-bottom: 5px;
+}
+</style>
+<body>
+
+<h1>Entendendo o Box Model
+
+<p>Caixa com <code>box-sizing: content-box</code> (padrão):</p>
+<div class="caixa-padrao">
+Conteúdo da caixa padrão.
+Largura total (visual): 200 (conteúdo) + 2*10 (padding) + 2*5 (borda) = 230px
+Altura total (visual): 240 (conteúdo) + 2*10 (padding) + 2*5 (borda) = 270px
+</div>
+<p>Caixa com <code>box-sizing: border-box</code>:</p>''
+<div class="caixa-border-box">
+Conteúdo da caixa border-box.
+Largura total (visual): 200px (já inclui padding e borda)
+Altura total (visual): 240px (já inclui padding e borda)
+</div>
+<p>Observe como a largura e altura declaradas se comportam de forma diferente em cada caso, afetando o tamanho final do elemento na tela.</p>
+</body>
+
+</html>

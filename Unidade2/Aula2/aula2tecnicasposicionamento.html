@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exemplo de Posicionamento CSS</title>
+
+<style>
+
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+height: 2000px; /* Para simular rolagem */
+background-color: #f0f0f0;
+}
+.container-posicionado {
+position: relative; /* Contêiner para posicionamento absoluto */
+width: 400px;
+height: 200px;
+background-color: #e0e0e0;
+border: 2px dashed #999;
+margin-bottom: 30px;
+padding: 10px;
+}
+.box {
+width: 80px;
+height: 80px;
+background-color: #4CAF50;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+border: 1px solid #388E3C;
+box-sizing: border-box;
+}
+.static-box {
+background-color: #FFC107;
+position: static; /* Padrão, sem efeito de top/left */
+margin: 10px;
+}
+.relative-box {
+background-color: #2196F3;
+position: relative;
+top: 20px;
+left: 20px;
+margin-bottom: 20px; /* Ainda ocupa espaço original */
+}
+.absolute-box {
+background-color: #F44336;
+position: absolute;
+top: 50px;
+right: 10px;
+/* Posicionado em relação ao .container-posicionado */
+}
+.fixed-box {
+background-color: #9C27B0;
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 1000; /* Para garantir que fique acima de outros elementos */
+}
+.sticky-box {
+background-color: #00BCD4;
+position: sticky;
+top: 0; /* Cola no topo quando o scroll atinge 0px do elemento */
+z-index: 900;
+padding: 10px;
+text-align: center;
+}
+p {
+
+margin-bottom: 10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Técnicas de Posicionamento CSS</h1>
+
+<div class="sticky-box">
+
+Eu sou uma caixa sticky! Role a página para me ver colar.
+
+</div>
+
+<p>Conteúdo antes do container posicionado.</p>
+
+<div class="container-posicionado">
+
+<h3>Container Posicionado (<code>position: relative</code>)</h3>
+
+<p>Este container serve como referência para o elemento absoluto.</p>
+
+<div class="box static-box">Static</div>
+
+<div class="box absolute-box">Absolute</div>
+
+</div>
+
+<p> Este parágrafo está após o container.</p>
+
+<div class="box relative-box">Relative</div>
+
+<p style="margin-top: 50px;">
+
+Role para baixo para ver a caixa "Fixed" no canto inferior direito e a caixa "Sticky" no topo.
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Mais conteúdo para forçar a rolagem.
+
+</p>
+
+<div class="box fixed-box">Fixed</div>
+
+</body>
+
+</html>
+

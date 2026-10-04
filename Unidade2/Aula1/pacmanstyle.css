@@ -1,0 +1,165 @@
+.pacman {
+    width: 80px;
+    height: 80px;
+
+    background: yellow;
+    border-radius: 50%;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 35%,
+        55% 50%,
+        100% 65%,
+        100% 100%,
+        0 100%
+    );
+
+    animation: comer 0.5s infinite, andar 2s linear infinite;
+}
+
+.ghost {
+    width: 70px;
+    height: 80px;
+
+    position: relative;
+
+    border-radius: 35px 35px 0 0;
+
+    animation: andarfantasma 2s linear infinite,;
+}
+
+.red {
+    background: #ff0000;
+}
+
+.pink {
+    background: #ff9de2;
+}
+
+.blue {
+    background: #00d9ff;
+}
+
+.orange {
+    background: #ffb347;
+}
+
+.eye {
+    width: 18px;
+    height: 22px;
+
+    background: white;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 25px;
+    animation: movimentosolhosfantasma 2s linear infinite;
+}
+
+.eye::after {
+    content: "";
+
+    width: 8px;
+    height: 10px;
+
+    background: #0465C0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 6px;
+    left: 7px;
+}
+
+.eye.left {
+    left: 14px;
+}
+
+.eye.right {
+    right: 14px;
+}
+
+.ghost {
+    width: 70px;
+    height: 80px;
+
+    position: relative;
+
+    border-radius: 35px 35px 0 0;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        85% 85%,
+        70% 100%,
+        50% 85%,
+        30% 100%,
+        15% 85%,
+        0 100%
+    );
+    animation: andarfantasma 2s linear infinite;
+}
+
+.game {
+    background: #000;
+    padding: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+@keyframes comer {
+    0%, 100% {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 35%,
+            55% 50%,
+            100% 65%,
+            100% 100%,
+            0 100%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 50%,
+            55% 50%,
+            100% 50%,
+            100% 100%,
+            0 100%
+        );
+    }
+}
+
+@keyframes andar {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes andarfantasma {
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes movimentosolhosfantasma {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
