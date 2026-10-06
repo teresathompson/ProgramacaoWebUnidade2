@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exemplo de Flexbox</title>
+
+<style>
+
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #f9f9f9;
+}
+.flex-container {
+border: 2px solid #333;
+padding: 10px;
+margin-bottom: 20px;
+min-height: 150px; /* Para visualizar o alinhamento */
+background-color: #fff;
+}
+.flex-item {
+background-color: #64B5F6;
+color: white;
+padding: 15px;
+margin: 5px;
+text-align: center;
+font-weight: bold;
+border-radius: 5px;
+box-sizing: border-box;
+flex-grow: 0; /* Padrão */
+flex-shrink: 1; /* Padrão */
+flex-basis: auto; /* Padrão */
+}
+/* Exemplos de Contêiner Flex */
+.row-example {
+display: flex;
+flex-direction: row; /* Padrão */
+justify-content: space-around;
+align-items: center;
+}
+.column-example {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+height: 300px; /* Necessário para ver o justify-content em coluna */
+}
+.wrap-example {
+display: flex;
+flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+justify-content: center;
+gap: 10px; /* Espaço entre os itens */
+}
+/* Exemplos de Itens Flex */
+.flex-item.grow {
+flex-grow: 1; /* Permite que o item cresça para ocupar espaço */
+}
+.flex-item.shrink {
+flex-shrink: 2; /* Faz com que este item encolha mais do que os outros */
+flex-basis: 120px; /* Tamanho inicial maior */
+}
+.flex-item.order-last {
+order: 1; /* Mover para o final */
+}
+.flex-item.align-self-end {
+align-self: flex-end; /* Alinha este item ao final do eixo transversal */
+}
+h2 {
+
+margin-top: 30px;
+
+color: #333;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Utilizando Flexbox</h1>
+
+<h2>Exemplo 1: Linha (row) com alinhamento e distribuição</h2>
+
+<p><code>display: flex; flex-direction: row; justify-content: space-around; align-items: center;</code></p>
+
+<div class="flex-container row-example">
+
+<div class="flex-item">Item 1</div>
+
+<div class="flex-item">Item 2</div>
+
+<div class="flex-item">Item 3</div>
+
+</div>
+
+<h2>Exemplo 2: Coluna (column) com alinhamento e distribuição</h2>
+
+<p><code>display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;</code></p>
+
+<div class="flex-container column-example">
+
+<div class="flex-item">Item A</div>
+
+<div class="flex-item">Item B</div>
+
+<div class="flex-item">Item C</div>
+
+</div>
+
+<h2>Exemplo 3: Quebra de linha (wrap) com `gap`</h2>
+
+<p><code>display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;</code><br>
+
+Redimensione a janela do navegador para ver os itens quebrarem a linha.</p>
+
+<div class="flex-container wrap-example">
+
+<div class="flex-item">Item Curto</div>
+
+<div class="flex-item">Item Mais Longo</div>
+
+<div class="flex-item">Outro Item</div>
+
+<div class="flex-item">Item Um</div>
+
+<div class="flex-item">Item Dois</div>
+
+<div class="flex-item">Item Três Grande</div>
+
+</div>
+
+<h2>Exemplo 4: Propriedades dos Itens Flex (`flex-grow`, `order`, `align-self`)</h2>
+
+<p><code>display: flex; align-items: stretch;</code> (o padrão para `align-items` em `flex-direction: row` se não for definido)</p>
+
+<div class="flex-container row-example">
+
+<div class="flex-item">Padrão</div>
+
+<div class="flex-item grow">Cresce (<code>flex-grow: 1</code>)</div>
+
+<div class="flex-item">Padrão</div>
+
+<div class="flex-item order-last">Último (<code>order: 1</code>)</div>
+
+<div class="flex-item align-self-end">Final (<code>align-self: flex-end</code>)</div>
+
+</div>
+
+</body>
+
+</html>
