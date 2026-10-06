@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exemplo de Media Query</title>
+
+<style>
+
+.container { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+
+.item {
+flex: 1 1 300px; /* Base de 300px, cresce e encolhe */
+background-color: #054a5e;
+color: #fff;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+text-align: center;
+}
+/* Aplica estilos quando a largura da tela for MENOR OU IGUAL a 768px (tablets e smartphones) */
+@media screen and (max-width: 768px) {
+.container {
+flex-direction: column; /* Itens em coluna */
+}
+.item {
+flex: 1 1 auto; /* Ocupa a largura total disponível */
+}
+}
+/* Aplica estilos quando a largura da tela for MENOR OU IGUAL a 480px (smartphones) */
+@media screen and (max-width: 480px) {
+.item {
+padding: 10px;
+font-size: 0.9em;
+
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="item">Item 1</div>
+
+<div class="item">Item 2</div>
+
+<div class="item">Item 3</div>
+
+</div>
+
+</body>
+
+</html>

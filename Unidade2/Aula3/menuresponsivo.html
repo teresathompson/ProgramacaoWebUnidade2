@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu Responsivo</title>
+
+<style>
+
+.menu-desktop {
+display: flex;
+justify-content: space-around;
+background-color: #333;
+padding: 10px;
+}
+.menu-desktop a {
+color: white;
+text-decoration: none;
+padding: 8px 15px;
+}
+.menu-mobile {
+display: none; /* Escondido por padrão */
+}
+/* Quando a tela for menor que 768px (mobile), escondemos o menu desktop e mostramos o mobile */
+@media screen and (max-width: 768px) {
+.menu-desktop {
+display: none;
+}
+.menu-mobile {
+display: block;
+background-color: #555;
+padding: 10px;
+text-align: center;
+color: white;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="menu-desktop">
+
+<a href="#">Início</a>
+
+<a href="#">Sobre</a>
+
+<a href="#">Serviços</a>
+
+<a href="#">Contato</a>
+
+</div>
+
+<div class="menu-mobile">
+
+Menu (Clique para expandir em um cenário real)
+
+</div>
+
+</nav>
+
+</body>
+
+</html>

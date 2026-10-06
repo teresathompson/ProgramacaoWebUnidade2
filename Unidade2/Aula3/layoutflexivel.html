@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exemplo de Transição</title>
+
+<style>
+
+.botao-transicao {
+background-color: #007bff;
+color: white;
+padding: 15px 30px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 18px;
+transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciona cor e escala */
+}
+.botao-transicao:hover {
+background-color: #0056b3;
+transform: scale(1.05); /* Leve aumento de tamanho */
+}
+</style>
+
+<body>
+
+<button class="botao-transicao">Passe o mouse aqui</button>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imagens e Tipografia Flexíveis</title>
+
+<style>
+
+html {
+font-size: 16px; /* Tamanho base para 'rem' */
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 20px;
+line-height: 1.6;
+}
+img {
+max-width: 100%; /* Imagem nunca maior que seu contêiner */
+height: auto; /* Mantém a proporção */
+display: block; /* Remove espaço extra abaixo */
+margin-bottom: 1rem;
+}
+h1 {
+font-size: 2.5rem; /* 2.5 vezes o tamanho da fonte raiz */
+margin-bottom: 1rem;
+}
+p {
+font-size: 1rem; /* 1 vez o tamanho da fonte raiz */
+}
+/* Ajuste do tamanho da fonte em telas menores */
+@media screen and (max-width: 600px) {
+html {
+font-size: 14px; /* Reduz a base para telas menores */
+}
+h1 {
+font-size: 2rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Título Principal do Artigo</h1>
+
+<img src="scream.jpg" alt="Imagem Flexível">
+
+<p>Este é um parágrafo de exemplo que usa unidades `rem` para o tamanho da fonte. Observe como o tamanho do texto e os espaçamentos podem se ajustar dinamicamente em telas menores através da media query que modifica o `font-size` do elemento `html`.</p>
+
+<p>A imagem acima também é flexível, garantindo que ela nunca transborde seu contêiner, independentemente do tamanho da tela do dispositivo.</p>
+
+</body>
+
+</html>

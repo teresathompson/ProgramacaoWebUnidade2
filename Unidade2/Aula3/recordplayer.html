@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Record Player Spinner</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f3efe7;
+}
+
+
+/* ========================================
+   RECORD PLAYER
+======================================== */
+
+.record-player {
+    position: relative;
+
+    width: 220px;
+    height: 180px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b97842,
+            #8f512b
+        );
+
+    border: 5px solid #63361f;
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.3),
+        inset 0 0 0 3px rgba(255,255,255,.08);
+}
+
+
+/* ========================================
+   TURNTABLE PLATTER
+======================================== */
+
+.platter {
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    left: 15px;
+    top: 15px;
+
+    border-radius: 50%;
+
+    background: #363636;
+
+    box-shadow:
+        0 4px 7px rgba(0,0,0,.5),
+        inset 0 0 0 3px #555;
+}
+
+
+/* ========================================
+   VINYL RECORD
+======================================== */
+
+.record {
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 50%;
+
+    background:
+        /* groove highlights */
+        repeating-radial-gradient(
+            circle,
+            #171717 0px,
+            #171717 3px,
+            #292929 4px,
+            #171717 5px
+        );
+
+    box-shadow:
+        inset 0 0 8px #000,
+        0 2px 4px rgba(0,0,0,.5);
+
+    animation: spinRecord 2s linear infinite;
+}
+
+
+@keyframes spinRecord {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   RECORD LIGHT REFLECTION
+======================================== */
+
+.record::before {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 120px;
+
+    left: 45px;
+    top: 7px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    transform: rotate(35deg);
+}
+
+
+/* ========================================
+   RECORD LABEL
+======================================== */
+
+.label {
+    position: absolute;
+
+    width: 46px;
+    height: 46px;
+
+    left: 44px;
+    top: 44px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #222 0 4px,
+            #e4a632 5px,
+            #bd651e 70%,
+            #874015 100%
+        );
+
+    box-shadow:
+        inset 0 0 4px rgba(0,0,0,.35);
+}
+
+
+/* Label decoration */
+
+.label::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 3px;
+
+    background: rgba(255,255,255,.5);
+
+    left: 10px;
+    top: 14px;
+
+    border-radius: 3px;
+}
+
+
+.label::after {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 2px;
+
+    background: rgba(255,255,255,.35);
+
+    left: 14px;
+    top: 27px;
+
+    border-radius: 3px;
+}
+
+
+/* ========================================
+   TONEARM BASE
+======================================== */
+
+.tonearm-base {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    right: 13px;
+    top: 16px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #aaa,
+            #555
+        );
+
+    border: 3px solid #444;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.4);
+
+    z-index: 10;
+}
+
+
+/* ========================================
+   TONEARM
+======================================== */
+
+.tonearm {
+    position: absolute;
+
+    width: 8px;
+    height: 110px;
+
+    left: 15px;
+    top: 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #777,
+            #ddd,
+            #777
+        );
+
+    border-radius: 5px;
+
+    transform-origin: 50% 5px;
+
+    transform: rotate(25deg);
+
+    animation: tonearmMove 5s ease-in-out infinite alternate;
+}
+
+
+/*
+   Tonearm slowly moves across the record
+*/
+
+@keyframes tonearmMove {
+
+    from {
+        transform: rotate(25deg);
+    }
+
+    to {
+        transform: rotate(38deg);
+    }
+}
+
+
+/* ========================================
+   CARTRIDGE
+======================================== */
+
+.cartridge {
+    position: absolute;
+
+    width: 18px;
+    height: 25px;
+
+    left: -5px;
+    bottom: -12px;
+
+    background: #252525;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 2px 3px rgba(0,0,0,.4);
+}
+
+
+/* Stylus */
+
+.cartridge::after {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 8px;
+
+    background: #ddd;
+
+    left: 8px;
+    bottom: -6px;
+
+    transform: rotate(15deg);
+}
+
+
+/* ========================================
+   SPEED BUTTON
+======================================== */
+
+.speed-button {
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    right: 22px;
+    bottom: 20px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ddd,
+            #777
+        );
+
+    border: 2px solid #444;
+
+    box-shadow:
+        0 2px 3px rgba(0,0,0,.3);
+}
+
+
+/* ========================================
+   POWER LIGHT
+======================================== */
+
+.power-light {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    right: 47px;
+    bottom: 23px;
+
+    border-radius: 50%;
+
+    background: #ff3b30;
+
+    box-shadow:
+        0 0 6px #ff3b30;
+
+    animation: powerPulse 1.2s ease-in-out infinite alternate;
+}
+
+
+@keyframes powerPulse {
+
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   SMALL FEET
+======================================== */
+
+.record-player::before,
+.record-player::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 7px;
+
+    bottom: -10px;
+
+    background: #3b2418;
+
+    border-radius: 0 0 5px 5px;
+}
+
+
+.record-player::before {
+    left: 20px;
+}
+
+
+.record-player::after {
+    right: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+</style>
+</head>
+
+
+<body>
+<div>
+    <h1>Toca Vinil</h1><p></p>
+
+<div class="record-player">
+
+    <!-- Turntable -->
+
+    <div class="platter">
+
+        <div class="record">
+
+            <div class="label"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Tonearm -->
+
+    <div class="tonearm-base">
+
+        <div class="tonearm">
+
+            <div class="cartridge"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Controls -->
+
+    <div class="power-light"></div>
+
+    <div class="speed-button"></div>
+
+</div>
+</div>
+
+</body>
+
+</html>

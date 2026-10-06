@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner Pista de Corrida</title>
+
+    <style>
+
+        /* Movimento do carro ao redor da pista */
+        @keyframes correr {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            position: relative;
+
+            width: 120px;
+            height: 120px;
+
+            /* Pista */
+            border: 24px solid #181818;
+            border-radius: 50%;
+
+            /* Linha divisória da pista */
+            outline: 3px dashed white;
+            outline-offset: -13px;
+        }
+
+        /* Braço invisível que gira */
+        .carro {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            animation: correr 2s linear infinite;
+        }
+
+        /* Carrinho */
+        .carro::before {
+            content: "🏎️";
+
+            position: absolute;
+
+            font-size: 50px;
+
+            top: -27px;
+            left: 50%;
+
+            transform: translateX(-50%) rotate(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="spinner">
+        <div class="carro"></div>
+    </div>
+
+</body>
+
+</html>

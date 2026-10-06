@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mobile-First com Grid</title>
+
+<style>
+
+/* Estilos base (Mobile-First) */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 10px;
+background-color: #f4f4f4;
+}
+.conteudo {
+padding: 10px;
+background-color: white;
+border-radius: 8px;
+margin-bottom: 20px;
+}
+.grid-container {
+display: grid;
+grid-template-columns: 1fr; /* Uma coluna em mobile */
+gap: 20px;
+}
+/* Estilos para telas maiores (tablets e desktops) */
+@media screen and (min-width: 768px) {
+.grid-container {
+grid-template-columns: 1fr 1fr; /* Duas colunas em tablets */
+}
+}
+/* Estilos para telas muito grandes (desktops) */
+@media screen and (min-width: 1200px) {
+.grid-container {
+grid-template-columns: 1fr 1fr 1fr; /* Três colunas em desktops */
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="grid-container">
+
+<div class="conteudo">
+
+<h2>Artigo 1</h2>
+
+<p>Este é o conteúdo do primeiro artigo. Em telas menores, ele ocupa a largura total.</p>
+
+</div>
+
+<div class="conteudo">
+
+<h2>Artigo 2</h2>
+
+<p>Em telas médias, os artigos se organizam em duas colunas, e em telas grandes, em três.</p>
+
+</div>
+
+<div class="conteudo">
+
+<h2>Artigo 3</h2>
+
+<p>Essa é a essência do design responsivo Mobile-First.</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

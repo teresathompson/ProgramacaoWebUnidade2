@@ -1,0 +1,191 @@
+.ipe {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+}
+
+
+/* =========================
+   TRONCO
+   ========================= */
+
+.tronco {
+    position: absolute;
+
+    width: 52px;
+    height: 285px;
+
+    left: 275px;
+    bottom: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2b160d,
+            #58311f 25%,
+            #75442a 50%,
+            #3b2115 80%,
+            #24120c
+        );
+
+    border-radius: 45% 55% 20% 30%;
+
+    transform: rotate(2deg);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   GALHOS
+   ========================= */
+
+.galho {
+    position: absolute;
+
+    width: 14px;
+
+    left: 295px;
+    bottom: 250px;
+
+    background: linear-gradient(
+        90deg,
+        #28150e,
+        #56301f,
+        #30180f
+    );
+
+    border-radius: 100%;
+
+    transform-origin: bottom center;
+
+    z-index: 1;
+}
+
+
+.g1 {
+    height: 190px;
+    transform: rotate(-48deg);
+}
+
+.g2 {
+    height: 205px;
+    transform: rotate(48deg);
+}
+
+.g3 {
+    height: 180px;
+    transform: rotate(-27deg);
+}
+
+.g4 {
+    height: 200px;
+    transform: rotate(27deg);
+}
+
+.g5 {
+    height: 190px;
+    transform: rotate(-10deg);
+}
+
+.g6 {
+    height: 210px;
+    transform: rotate(10deg);
+}
+
+
+/* =========================
+   ÁREA DA COPA
+   ========================= */
+
+.copa {
+    position: absolute;
+
+    width: 560px;
+    height: 350px;
+
+    left: 20px;
+    top: 20px;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   CACHOS DE FLORES
+   ========================= */
+
+.copa i {
+    position: absolute;
+
+    left: var(--x);
+    top: var(--y);
+
+    width: 55px;
+    height: 45px;
+
+    transform: scale(var(--s));
+
+    border-radius:
+        55% 45% 60% 40% /
+        45% 60% 40% 55%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #f064d7 0 7%,
+            #d72cba 8% 20%,
+            #b5149d 21% 48%,
+            #820873 70%,
+            #600653 100%
+        );
+
+    box-shadow:
+
+        /* flores ao redor */
+
+        -25px  5px 0 -8px #c51bad,
+         25px  3px 0 -9px #d62fbd,
+
+        -17px -18px 0 -10px #e342c7,
+         16px -20px 0 -9px #b8129f,
+
+        -30px 20px 0 -12px #951083,
+         30px 18px 0 -11px #e142c6,
+
+        -5px 27px 0 -10px #b4159c,
+
+        /* pequenas flores */
+
+        -38px  5px 0 -17px #e952cf,
+         38px -2px 0 -18px #a60d91,
+
+        -25px -28px 0 -18px #d72fbc,
+         25px -30px 0 -17px #ec5bd2;
+}
+
+
+/* algumas diferenças de formato */
+
+.copa i:nth-child(3n) {
+    width: 65px;
+    height: 38px;
+}
+
+.copa i:nth-child(4n) {
+    transform:
+        scale(var(--s))
+        rotate(15deg);
+}
+
+.copa i:nth-child(5n) {
+    width: 45px;
+    height: 55px;
+
+    filter: brightness(.85);
+}
+
+.copa i:nth-child(7n) {
+    filter: brightness(1.15);
+}

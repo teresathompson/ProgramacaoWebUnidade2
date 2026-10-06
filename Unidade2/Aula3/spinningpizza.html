@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pizza Spinner</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f5f5f5;
+}
+
+
+/* =========================
+   ROTATION
+========================= */
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   PIZZA / CRUST
+========================= */
+
+.pizza {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    /* Thick baked crust */
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,255,255,.25) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            #9a4c1c 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 25% 75%,
+            #a4521c 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle,
+            #e6a54e 50%,
+            #c87928 72%,
+            #8d4519 100%
+        );
+
+    box-shadow:
+        0 5px 8px rgba(0,0,0,.28),
+        inset 0 0 0 3px #9e541f,
+        inset 0 0 0 7px #edae57;
+
+    animation: girar 3s linear infinite;
+}
+
+
+/* =========================
+   TOMATO SAUCE
+========================= */
+
+.sauce {
+    position: absolute;
+
+    inset: 13px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            #d65332 0 4px,
+            transparent 5px
+        ),
+        radial-gradient(
+            circle at 70% 70%,
+            #b93925 0 5px,
+            transparent 6px
+        ),
+        #c94c2c;
+
+    box-shadow:
+        inset 0 0 7px rgba(80,20,0,.5);
+}
+
+
+/* =========================
+   CHEESE
+========================= */
+
+.cheese {
+    position: absolute;
+
+    inset: 18px;
+
+    border-radius: 50%;
+
+    background:
+        /* toasted cheese spots */
+        radial-gradient(circle at 20% 25%,
+            #b66a22 0 2px,
+            transparent 3px),
+
+        radial-gradient(circle at 70% 18%,
+            #c77828 0 2px,
+            transparent 3px),
+
+        radial-gradient(circle at 45% 75%,
+            #a95c1e 0 2px,
+            transparent 3px),
+
+        radial-gradient(circle at 82% 60%,
+            #bb6c24 0 2px,
+            transparent 3px),
+
+        radial-gradient(circle at 30% 55%,
+            #d48a2c 0 3px,
+            transparent 4px),
+
+        radial-gradient(
+            circle at 40% 35%,
+            #fff1a4,
+            #f6cf62 45%,
+            #e8a83c 100%
+        );
+
+    box-shadow:
+        inset 0 0 10px rgba(173,92,20,.35);
+}
+
+
+/* =========================
+   PEPPERONI
+========================= */
+
+.pepperoni {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            #ef8261 0 2px,
+            transparent 2.5px),
+
+        radial-gradient(circle at 65% 65%,
+            #7c2018 0 1.5px,
+            transparent 2px),
+
+        radial-gradient(
+            circle,
+            #d44c36,
+            #a82e23 75%
+        );
+
+    box-shadow:
+        inset -2px -2px 3px rgba(70,0,0,.35),
+        0 1px 2px rgba(0,0,0,.25);
+}
+
+
+.p1 { top: 30px; left: 64px; }
+.p2 { top: 58px; left: 27px; }
+.p3 { top: 91px; left: 43px; }
+.p4 { top: 82px; left: 92px; }
+.p5 { top: 44px; left: 102px; }
+
+
+/* =========================
+   MUSHROOMS
+========================= */
+
+.mushroom {
+    position: absolute;
+
+    width: 20px;
+    height: 12px;
+
+    background: #eee0bb;
+
+    border-radius: 50% 50% 35% 35%;
+
+    box-shadow:
+        inset -3px -2px 3px rgba(120,80,40,.25),
+        0 1px 1px rgba(0,0,0,.2);
+}
+
+
+/* mushroom stem */
+.mushroom::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 9px;
+
+    background: #dfc99d;
+
+    left: 7px;
+    top: 8px;
+
+    border-radius: 2px;
+}
+
+
+.m1 {
+    top: 38px;
+    left: 38px;
+
+    transform: rotate(-30deg);
+}
+
+.m2 {
+    top: 70px;
+    left: 65px;
+
+    transform: rotate(25deg);
+}
+
+.m3 {
+    top: 100px;
+    left: 72px;
+
+    transform: rotate(-15deg);
+}
+
+.m4 {
+    top: 65px;
+    left: 105px;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================
+   BLACK OLIVES
+========================= */
+
+.olive {
+    position: absolute;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #29241e;
+
+    box-shadow:
+        inset 0 0 0 3px #111;
+}
+
+
+.o1 { top: 45px; left: 75px; }
+.o2 { top: 73px; left: 43px; }
+.o3 { top: 99px; left: 102px; }
+.o4 { top: 30px; left: 92px; }
+
+
+/* =========================
+   TOMATO PIECES
+========================= */
+
+.tomato {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffb04c 0 2px,
+            #e74631 3px,
+            #b92820 100%
+        );
+
+    box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+
+.t1 { top: 27px; left: 48px; }
+.t2 { top: 76px; left: 79px; }
+.t3 { top: 103px; left: 56px; }
+
+
+/* =========================
+   GREEN PEPPER / BASIL
+========================= */
+
+.green {
+    position: absolute;
+
+    width: 13px;
+    height: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #75a938,
+            #28722d
+        );
+
+    border-radius: 100% 0 100% 0;
+
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+}
+
+
+.g1 {
+    top: 37px;
+    left: 83px;
+    transform: rotate(30deg);
+}
+
+.g2 {
+    top: 62px;
+    left: 55px;
+    transform: rotate(-35deg);
+}
+
+.g3 {
+    top: 88px;
+    left: 70px;
+    transform: rotate(70deg);
+}
+
+.g4 {
+    top: 62px;
+    left: 91px;
+    transform: rotate(-10deg);
+}
+
+.g5 {
+    top: 93px;
+    left: 31px;
+    transform: rotate(45deg);
+}
+
+
+/* =========================
+   ONION
+========================= */
+
+.onion {
+    position: absolute;
+
+    width: 18px;
+    height: 10px;
+
+    border: 3px solid rgba(151,76,115,.75);
+
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(30deg);
+}
+
+
+.on1 {
+    top: 48px;
+    left: 50px;
+}
+
+.on2 {
+    top: 91px;
+    left: 83px;
+    transform: rotate(-40deg);
+}
+
+
+/* =========================
+   SMALL CHEESE BUBBLES
+========================= */
+
+.bubble {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #fff0a1;
+
+    box-shadow:
+        inset -1px -1px 2px #bc7525;
+}
+
+
+.b1 { top: 52px; left: 91px; }
+.b2 { top: 85px; left: 57px; }
+.b3 { top: 108px; left: 89px; }
+.b4 { top: 57px; left: 119px; }
+.b5 { top: 34px; left: 58px; }
+
+
+/* =========================
+   SHADOW
+========================= */
+
+.pizza-wrapper {
+    position: relative;
+}
+
+
+.pizza-shadow {
+    position: absolute;
+
+    width: 125px;
+    height: 13px;
+
+    left: 12px;
+    top: 157px;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.18);
+
+    filter: blur(5px);
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="pizza-wrapper">
+
+    <div class="pizza">
+
+        <div class="sauce"></div>
+        <div class="cheese"></div>
+
+        <!-- Pepperoni -->
+        <span class="pepperoni p1"></span>
+        <span class="pepperoni p2"></span>
+        <span class="pepperoni p3"></span>
+        <span class="pepperoni p4"></span>
+        <span class="pepperoni p5"></span>
+
+        <!-- Mushrooms -->
+        <span class="mushroom m1"></span>
+        <span class="mushroom m2"></span>
+        <span class="mushroom m3"></span>
+        <span class="mushroom m4"></span>
+
+        <!-- Olives -->
+        <span class="olive o1"></span>
+        <span class="olive o2"></span>
+        <span class="olive o3"></span>
+        <span class="olive o4"></span>
+
+        <!-- Tomato -->
+        <span class="tomato t1"></span>
+        <span class="tomato t2"></span>
+        <span class="tomato t3"></span>
+
+        <!-- Green pepper / basil -->
+        <span class="green g1"></span>
+        <span class="green g2"></span>
+        <span class="green g3"></span>
+        <span class="green g4"></span>
+        <span class="green g5"></span>
+
+        <!-- Onion -->
+        <span class="onion on1"></span>
+        <span class="onion on2"></span>
+
+        <!-- Cheese bubbles -->
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+        <span class="bubble b4"></span>
+        <span class="bubble b5"></span>
+
+    </div>
+
+    <div class="pizza-shadow"></div>
+
+</div>
+
+</body>
+</html>

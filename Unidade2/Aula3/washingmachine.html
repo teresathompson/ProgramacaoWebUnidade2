@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+body {
+    background: #d8eef3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   WASHING MACHINE BODY
+   ========================= */
+
+.washing-machine {
+    width: 320px;
+    height: 430px;
+
+    background: linear-gradient(
+        90deg,
+        #eeeeee,
+        #ffffff 15%,
+        #ffffff 85%,
+        #e5e5e5
+    );
+
+    border: 2px solid #aaa;
+    border-radius: 8px;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 15px rgba(0,0,0,0.25),
+        inset 0 0 8px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   TOP CONTROL PANEL
+   ========================= */
+
+.control-panel {
+    height: 75px;
+
+    background: linear-gradient(
+        #202020,
+        #050505
+    );
+
+    border-radius: 6px 6px 2px 2px;
+
+    position: relative;
+
+    box-shadow:
+        inset 0 -3px 5px rgba(255,255,255,0.15);
+}
+
+
+/* detergent drawer */
+.drawer {
+    position: absolute;
+
+    width: 90px;
+    height: 48px;
+
+    left: 12px;
+    top: 12px;
+
+    border: 1px solid #555;
+
+    background: linear-gradient(
+        #151515,
+        #050505
+    );
+
+    color: white;
+
+    font-family: Arial;
+    font-size: 10px;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* display */
+.display {
+    position: absolute;
+
+    width: 80px;
+    height: 30px;
+
+    left: 125px;
+    top: 22px;
+
+    background: #050505;
+
+    border: 1px solid #333;
+
+    color: #66d9ff;
+
+    font-family: monospace;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   CONTROL KNOB
+   ========================= */
+
+.knob {
+
+    position: absolute;
+
+    width: 46px;
+    height: 46px;
+
+    right: 20px;
+    top: 14px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #eeeeee 0%,
+            #bbbbbb 35%,
+            #555 38%,
+            #ddd 55%,
+            #333 60%,
+            #111 100%
+        );
+
+    box-shadow:
+        0 2px 5px black;
+}
+
+
+/* knob indicator */
+.knob::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 15px;
+
+    background: white;
+
+    left: 50%;
+    top: 4px;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================
+   DOOR OUTER RING
+   ========================= */
+
+.door {
+
+    position: absolute;
+
+    width: 245px;
+    height: 245px;
+
+    left: 50%;
+    top: 105px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #222 0 55%,
+            #777 56%,
+            #eeeeee 61%,
+            #999 67%,
+            #eeeeee 72%
+        );
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.35);
+}
+
+
+/* =========================
+   GLASS
+   ========================= */
+
+.glass {
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 45% 35%,
+            #7fb6c7,
+            #315b69 60%,
+            #14252b 100%
+        );
+
+    box-shadow:
+        inset 0 0 20px #000;
+}
+
+
+/* glass reflection */
+
+.glass::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 35px;
+
+    top: 20px;
+    left: 30px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.20);
+
+    transform: rotate(-15deg);
+
+    z-index: 10;
+}
+
+
+/* =========================
+   CLOTHES
+   ========================= */
+
+.clothes {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    animation: wash 2s ease-in-out infinite;
+}
+
+
+.clothes span {
+
+    position: absolute;
+
+    display: block;
+
+    border-radius:
+        50% 40% 60% 35%;
+}
+
+
+.clothes span:nth-child(1) {
+
+    width: 75px;
+    height: 55px;
+
+    background: #6995bc;
+
+    top: 90px;
+    left: 30px;
+}
+
+
+.clothes span:nth-child(2) {
+
+    width: 80px;
+    height: 45px;
+
+    background: #bf0fc5;
+
+    top: 105px;
+    left: 85px;
+}
+
+
+.clothes span:nth-child(3) {
+
+    width: 55px;
+    height: 70px;
+
+    background: #0dd44f;
+
+    top: 60px;
+    left: 90px;
+}
+
+
+.clothes span:nth-child(4) {
+
+    width: 65px;
+    height: 40px;
+
+    background: #f5f250;
+
+    top: 45px;
+    left: 35px;
+}
+
+
+/* =========================
+   ANIMATION
+   ========================= */
+
+@keyframes wash {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   BOTTOM FILTER
+   ========================= */
+
+.filter {
+
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    right: 25px;
+    bottom: 25px;
+
+    border-radius: 50%;
+
+    border: 1px solid #999;
+
+    background: #f5f5f5;
+
+    box-shadow:
+        inset 0 0 4px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   FEET
+   ========================= */
+
+.washing-machine::before,
+.washing-machine::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 8px;
+
+    background: #333;
+
+    bottom: -9px;
+}
+
+
+.washing-machine::before {
+    left: 20px;
+}
+
+
+.washing-machine::after {
+    right: 20px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="washing-machine">
+
+    <!-- control panel -->
+    <div class="control-panel">
+
+        <div class="drawer">
+            WASH
+        </div>
+
+        <div class="display">
+            1:25
+        </div>
+
+        <div class="knob"></div>
+
+    </div>
+
+
+    <!-- washing machine door -->
+    <div class="door">
+
+        <div class="glass">
+
+            <div class="clothes">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- bottom filter -->
+    <div class="filter"></div>
+
+</div>
+
+</body>
+</html>
