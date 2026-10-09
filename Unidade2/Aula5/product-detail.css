@@ -1,0 +1,57 @@
+.product-detail-container {
+
+display: flex;
+
+gap: 2rem;
+
+}
+
+
+@media (max-width: 768px) {
+
+.product-detail-container {
+
+flex-direction: column;
+
+}
+
+
+.product-image-wrapper {
+
+width: 100%;
+
+}
+
+}
+
+@keyframes gentlePulse {
+
+0%, 100% { transform: scale(1); }
+
+50% { transform: scale(1.03); }
+
+}
+
+
+.product-image {
+
+animation: gentlePulse 3s infinite ease-in-out;
+
+}
+
+.product-image {
+
+max-width: 100%;
+
+border-radius: 10px;
+
+transition: transform 0.4s ease; /*propriedade responsável pelo efeito*/
+
+}
+
+
+.product-image:hover {
+
+transform: scale(1.05);
+
+}

@@ -1,0 +1,51 @@
+/* Ordem de Origem: Regra 1 */
+
+p {
+
+color: blue;
+
+}
+
+/* Ordem de Origem: Regra 2 - Mais abaixo, desempata se a especificidade for igual */
+
+p {
+
+color: green; /* Esta prevalecerá sobre 'blue' se a especificidade for igual */
+
+}
+
+/* Especificidade: Seletor de Elemento (baixo peso) */
+
+p {
+
+font-size: 16px;
+
+}
+
+/* Especificidade: Seletor de Classe (peso médio - mais específico que elemento) */
+
+.texto-destaque {
+
+font-size: 18px; /* Prevalece sobre o font-size do 'p' */
+
+color: orange;
+
+}
+
+/* Especificidade: Seletor de ID (peso alto - mais específico de todos) */
+
+#paragrafo-unico {
+
+font-size: 20px; /* Prevalece sobre '.texto-destaque' e 'p' */
+
+color: red;
+
+}
+
+/* !important (Deve ser evitado, quebra a cascata) */
+
+.texto-especial {
+
+color: purple !important; /* Irá sobrescrever TODAS as outras regras de cor para esta classe */
+
+}

@@ -1,0 +1,85 @@
+/* Variáveis de Tema (Modo Padrão - Claro) */
+
+:root {
+
+--cor-primaria: #007bff;
+
+--cor-secundaria: #6c757d;
+
+--cor-texto: #343a40;
+
+--cor-fundo: #f8f9fa;
+
+--espacamento-padrao: 1rem;
+
+--borda-arredondada: 0.25rem;
+
+--sombra-caixa: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+}
+
+body {
+
+font-family: Arial, sans-serif;
+
+background-color: var(--cor-fundo);
+
+color: var(--cor-texto);
+
+margin: 0; padding:
+
+var(--espacamento-padrao);
+
+}
+
+.botao {
+
+background-color: var(--cor-primaria);
+
+color: white;
+
+padding: 0.5rem 1rem;
+
+border: none; border-radius: var(--borda-arredondada);
+
+cursor: pointer;
+
+box-shadow: var(--sombra-caixa);
+
+transition: background-color 0.3s ease;
+
+}
+
+.botao:hover {
+
+background-color: #0056b3; /* Um tom mais escuro de azul ao passar o mouse */
+
+}
+
+.card {
+
+background-color: white;
+
+border-radius: var(--borda-arredondada);
+
+box-shadow: var(--sombra-caixa);
+
+padding: var(--espacamento-padrao);
+
+margin-bottom: var(--espacamento-padrao);
+
+}
+
+/* Exemplo de Tema Escuro (ativado por uma classe no body, por exemplo) */
+
+body.dark-mode {
+
+--cor-primaria: #6610f2;
+
+--cor-secundaria: #adb5bd;
+
+--cor-texto: #343a40;
+
+--cor-fundo: #212529;
+
+}

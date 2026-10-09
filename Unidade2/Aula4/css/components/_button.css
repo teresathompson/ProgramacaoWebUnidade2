@@ -1,0 +1,53 @@
+
+
+/* Estilos para o botão */
+
+.btn {
+
+    display: inline-block;
+
+    padding: 0.8em 1.5em;
+
+font-size: 1em;
+
+text-align: center;
+
+text-decoration: none;
+
+cursor: pointer;
+
+border: none;
+
+border-radius: var(--border-radius-base);
+
+transition: background-color 0.3s ease;
+
+}
+
+.btn-primary {
+
+background-color: var(--primary-color);
+
+color: white;
+
+}
+
+.btn-primary:hover {
+
+background-color: #45a049; /* Verde mais escuro no hover */
+
+}
+
+.btn-secondary {
+
+background-color: var(--secondary-color);
+
+color: white;
+
+}
+
+.btn-secondary:hover {
+
+background-color: #da190b; /* Vermelho mais escuro no hover */
+
+}

@@ -1,0 +1,25 @@
+/* Importando módulos CSS */
+
+@import url('utils/_variables.css');
+
+@import url('base/_reset.css');
+
+@import url('base/_typography.css'); /* Supondo que você crie um arquivo para tipografia */
+
+@import url('components/_button.css');
+
+@import url('components/_card.css'); /* Supondo que você crie um arquivo para card */
+
+@import url('components/_navbar.css'); /* Supondo que você crie um arquivo para navbar */
+
+/* Estilos globais ou layout que não se encaixam em um componente específico */
+
+.container {
+
+max-width: 960px;
+
+margin: 0 auto;
+
+padding: var(--spacing-unit);
+
+}

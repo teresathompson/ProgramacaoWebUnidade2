@@ -1,0 +1,17 @@
+/* Variáveis globais para o tema */
+
+:root {
+
+--primary-color: #4CAF50; /* Verde */
+
+--secondary-color: #f44336; /* Vermelho */
+
+--text-color: #333;
+
+--background-color: #f9f9f9;
+
+--spacing-unit: 1rem;
+
+--border-radius-base: 4px;
+
+}

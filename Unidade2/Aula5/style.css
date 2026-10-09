@@ -1,0 +1,32 @@
+@import url('catalog.css');
+@import url('buttons.css');
+@import url('product-detail.css');
+
+:root {
+
+--primary-color: #a75d44; /* marrom terroso */
+
+--secondary-color: #f7d9c4; /* bege claro */
+
+--accent-color: #e29b84; /* coral suave */
+
+--font-family-base: 'Georgia', serif;
+
+--spacing-base: 1.6rem;
+
+}
+
+
+body {
+
+font-family: var(--font-family-base);
+
+color: var(--primary-color);
+
+background-color: var(--secondary-color);
+
+margin: 0;
+
+padding: var(--spacing-base);
+
+}
